@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransparentMoq", "TransparentMoq\TransparentMoq.csproj", "{B996BFA5-AE47-4853-A0E6-A7F4780770E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B996BFA5-AE47-4853-A0E6-A7F4780770E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B996BFA5-AE47-4853-A0E6-A7F4780770E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B996BFA5-AE47-4853-A0E6-A7F4780770E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B996BFA5-AE47-4853-A0E6-A7F4780770E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4070D769-C164-4F29-B804-5DDF13C613DF}
+	EndGlobalSection
+EndGlobal
