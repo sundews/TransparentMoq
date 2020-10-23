@@ -13,7 +13,16 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  source: 'https://api.nuget.org/v3/index.json'
 
 steps:
-- script: dotnet build ./Source/TransparentMoq.sln --configuration $(buildConfiguration) -p:'SbpSourceName=$(Build.SourceBranch)' -p:'SbpProductionSource=refs/heads/master|https://api.nuget.org/v3/index.json' -p:'SbpIntegrationSource=refs/heads/release/.+|https://api.nuget.org/v3/index.json' -p:'SbpApiKey=$(SbpApiKey)' -p:'SbpAllowLocalSource=false'
+- script: dotnet build ./Source/TransparentMoq.sln --configuration $(buildConfiguration) -p:'SbpSourceName=$(Build.SourceBranch)' -p:'SbpProductionSource=refs/heads/master|$(source)' -p:'SbpIntegrationSource=refs/heads/release/.+|$(source)' -p:'SbpAllowLocalSource=false' -p:'SbpEnablePublish=false' -p:'SbpPublishLogFormats=##vso[task.setvariable variable=pushSource]{2}'
   displayName: 'dotnet build $(buildConfiguration)'
+
+- task: CopyFiles@2
+  inputs:
+    Contents: '**/*.nupkg'
+    TargetFolder: $(Build.ArtifactStagingDirectory)
+
+- script: dotnet nuget push '$(Build.ArtifactStagingDirectory)/**/*.nupkg' -s '$(pushSource)' -k '$(SbpApiKey)'
+  displayName: 'dotnet nuget push'
