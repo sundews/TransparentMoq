@@ -20,8 +20,8 @@ steps:
 - script: dotnet build ./Source/TransparentMoq.sln --configuration $(buildConfiguration) -p:'SbpSourceName=$(Build.SourceBranch)' -p:'SbpProductionSource=refs/heads/master|$(source)' -p:'SbpIntegrationSource=refs/heads/release/.+|$(source)' -p:'SbpAllowLocalSource=false' -p:'SbpEnablePublish=false' -p:'SbpPublishLogFormats=##vso[task.setvariable variable=pushSource]{2}'
   displayName: 'dotnet build $(buildConfiguration)'
 
-- script: dotnet test '**/bin/$(buildConfiguration)/**/*Tests.dll' --configuration $(buildConfiguration) 
-  displayName: 'dotnet test $(buildConfiguration)'
+#- script: dotnet test '**/bin/$(buildConfiguration)/**/*Tests.dll'
+#  displayName: 'dotnet test'
 
 - task: CopyFiles@2
   inputs:
