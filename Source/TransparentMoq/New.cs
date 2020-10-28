@@ -64,10 +64,11 @@ namespace Moq
             return mocked.GetMock().CallBase;
         }
 
-        public static void SetCallBase<T>(this T mocked, bool callBase)
+        public static T SetCallBase<T>(this T mocked, bool callBase)
             where T : class
         {
             mocked.GetMock().CallBase = callBase;
+            return mocked;
         }
 
         public static DefaultValue GetDefaultValue<T>(this T mocked)
@@ -76,22 +77,24 @@ namespace Moq
             return mocked.GetMock().DefaultValue;
         }
 
+        public static T SetDefaultValue<T>(this T mocked, DefaultValue defaultValue)
+            where T : class
+        {
+            mocked.GetMock().DefaultValue = defaultValue;
+            return mocked;
+        }
+
         public static DefaultValueProvider GetDefaultValueProvider<T>(this T mocked)
             where T : class
         {
             return mocked.GetMock().DefaultValueProvider;
         }
 
-        public static void SetDefaultValue<T>(this T mocked, DefaultValue defaultValue)
-            where T : class
-        {
-            mocked.GetMock().DefaultValue = defaultValue;
-        }
-
-        public static void SetDefaultValueProvider<T>(this T mocked, DefaultValueProvider defaultValueProvider)
+        public static T SetDefaultValueProvider<T>(this T mocked, DefaultValueProvider defaultValueProvider)
             where T : class
         {
             mocked.GetMock().DefaultValueProvider = defaultValueProvider;
+            return mocked;
         }
 
         public static Switches GetSwitches<T>(this T mocked)
@@ -100,10 +103,11 @@ namespace Moq
             return mocked.GetMock().Switches;
         }
 
-        public static void SetSwitches<T>(this T mocked, Switches switches)
+        public static T SetSwitches<T>(this T mocked, Switches switches)
             where T : class
         {
             mocked.GetMock().Switches = switches;
+            return mocked;
         }
 
         public static ISetup<T> Setup<T>(this T mocked, Expression<Action<T>> expression)
