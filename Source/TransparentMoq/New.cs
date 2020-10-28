@@ -20,7 +20,7 @@ namespace Moq
         {
             return new Mock<T>().Object;
         }
-
+        
         public static T Mock<T>(MockBehavior mockBehavior)
             where T : class
         {
@@ -44,12 +44,66 @@ namespace Moq
         {
             return new Mock<T>(newExpression, behavior).Object;
         }
-
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Mock<T> GetMock<T>(this T mocked)
             where T : class
         {
             return Moq.Mock.Get(mocked);
+        }
+
+        public static MockBehavior GetBehavior<T>(this T mocked)
+            where T : class
+        {
+            return mocked.GetMock().Behavior;
+        }
+
+        public static bool GetCallBase<T>(this T mocked)
+            where T : class
+        {
+            return mocked.GetMock().CallBase;
+        }
+
+        public static void SetCallBase<T>(this T mocked, bool callBase)
+            where T : class
+        {
+            mocked.GetMock().CallBase = callBase;
+        }
+
+        public static DefaultValue GetDefaultValue<T>(this T mocked)
+            where T : class
+        {
+            return mocked.GetMock().DefaultValue;
+        }
+
+        public static DefaultValueProvider GetDefaultValueProvider<T>(this T mocked)
+            where T : class
+        {
+            return mocked.GetMock().DefaultValueProvider;
+        }
+
+        public static void SetDefaultValue<T>(this T mocked, DefaultValue defaultValue)
+            where T : class
+        {
+            mocked.GetMock().DefaultValue = defaultValue;
+        }
+
+        public static void SetDefaultValueProvider<T>(this T mocked, DefaultValueProvider defaultValueProvider)
+            where T : class
+        {
+            mocked.GetMock().DefaultValueProvider = defaultValueProvider;
+        }
+
+        public static Switches GetSwitches<T>(this T mocked)
+            where T : class
+        {
+            return mocked.GetMock().Switches;
+        }
+
+        public static void SetSwitches<T>(this T mocked, Switches switches)
+            where T : class
+        {
+            mocked.GetMock().Switches = switches;
         }
 
         public static ISetup<T> Setup<T>(this T mocked, Expression<Action<T>> expression)

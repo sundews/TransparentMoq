@@ -27,6 +27,7 @@ To arrange a mock everything remains the same:
 fileSystem.Setup(x =&gt; x.Exists(It.IsAny&lt;string&gt;())).Returns(true);</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>moq, mocking</PackageTags>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
