@@ -20,7 +20,7 @@ namespace Moq
         {
             return new Mock<T>().Object;
         }
-        
+
         public static T Mock<T>(MockBehavior mockBehavior)
             where T : class
         {
@@ -44,7 +44,7 @@ namespace Moq
         {
             return new Mock<T>(newExpression, behavior).Object;
         }
-        
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Mock<T> GetMock<T>(this T mocked)
             where T : class
