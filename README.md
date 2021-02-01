@@ -2,9 +2,9 @@
 
 With inspiration taken from mocking frameworks like NSubstitute, FakeItEasy and JustMock this package adds some of the syntactic advantages of these frameworks to Moq.
 
-TransparentMoq allows to use Moq without having to store mocks in Mock<> variables, instead a T variable can be used. This also removes the need to pass mocks with ".Object" everywhere as they can be passed directly.
+TransparentMoq allows to use Moq without having to store mocks in Mock<T> variables, instead a T variable can be used. This also removes the need to pass mocks with ".Object" everywhere as they can be passed directly.
 
-The library provides extension methods for most of Moq's methods, so they can also be called directly on the T variable.
+The library provides extension methods for most (if not all) of Moq's methods, so they can be called directly on the T variable.
 Examples:
 Instead of
 ```
