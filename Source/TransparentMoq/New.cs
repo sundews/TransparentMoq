@@ -122,7 +122,8 @@ namespace Moq
             return mocked.GetMock().Setup(expression);
         }
 
-        public static ISetupGetter<T, TProperty> SetupGet<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> expression)
+        public static ISetupGetter<T, TProperty> SetupGet<T, TProperty>(this T mocked,
+            Expression<Func<T, TProperty>> expression)
             where T : class
         {
             return mocked.GetMock().SetupGet(expression);
@@ -158,7 +159,8 @@ namespace Moq
             return mocked.GetMock().SetupProperty(property);
         }
 
-        public static Mock<T> SetupProperty<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> property, TProperty initialValue)
+        public static Mock<T> SetupProperty<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> property,
+            TProperty initialValue)
             where T : class
         {
             return mocked.GetMock().SetupProperty(property, initialValue);
@@ -170,7 +172,8 @@ namespace Moq
             return mocked.GetMock().SetupAllProperties();
         }
 
-        public static ISetupSequentialResult<TResult> SetupSequence<T, TResult>(this T mocked, Expression<Func<T, TResult>> expression)
+        public static ISetupSequentialResult<TResult> SetupSequence<T, TResult>(this T mocked,
+            Expression<Func<T, TResult>> expression)
             where T : class
         {
             return mocked.GetMock().SetupSequence(expression);
@@ -218,7 +221,8 @@ namespace Moq
             mocked.GetMock().Verify(expression, times, failMessage);
         }
 
-        public static void Verify<T>(this T mocked, Expression<Action<T>> expression, Func<Times> times, string failMessage)
+        public static void Verify<T>(this T mocked, Expression<Action<T>> expression, Func<Times> times,
+            string failMessage)
             where T : class
         {
             mocked.GetMock().Verify(expression, times, failMessage);
@@ -242,13 +246,15 @@ namespace Moq
             mocked.GetMock().Verify(expression, times);
         }
 
-        public static void Verify<T, TResult>(this T mocked, Expression<Func<T, TResult>> expression, string failMessage)
+        public static void Verify<T, TResult>(this T mocked, Expression<Func<T, TResult>> expression,
+            string failMessage)
             where T : class
         {
             mocked.GetMock().Verify(expression, failMessage);
         }
 
-        public static void Verify<T, TResult>(this T mocked, Expression<Func<T, TResult>> expression, Times times, string failMessage)
+        public static void Verify<T, TResult>(this T mocked, Expression<Func<T, TResult>> expression, Times times,
+            string failMessage)
             where T : class
         {
             mocked.GetMock().Verify(expression, times, failMessage);
@@ -260,31 +266,36 @@ namespace Moq
             mocked.GetMock().VerifyGet(expression);
         }
 
-        public static void VerifyGet<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> expression, Times times)
+        public static void VerifyGet<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> expression,
+            Times times)
             where T : class
         {
             mocked.GetMock().VerifyGet(expression, times);
         }
 
-        public static void VerifyGet<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> expression, Func<Times> times)
+        public static void VerifyGet<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> expression,
+            Func<Times> times)
             where T : class
         {
             mocked.GetMock().VerifyGet(expression, times);
         }
 
-        public static void VerifyGet<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> expression, string failMessage)
+        public static void VerifyGet<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> expression,
+            string failMessage)
             where T : class
         {
             mocked.GetMock().VerifyGet(expression, failMessage);
         }
 
-        public static void VerifyGet<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> expression, Times times, string failMessage)
+        public static void VerifyGet<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> expression,
+            Times times, string failMessage)
             where T : class
         {
             mocked.GetMock().VerifyGet(expression, times, failMessage);
         }
 
-        public static void VerifyGet<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> expression, Func<Times> times, string failMessage)
+        public static void VerifyGet<T, TProperty>(this T mocked, Expression<Func<T, TProperty>> expression,
+            Func<Times> times, string failMessage)
             where T : class
         {
             mocked.GetMock().VerifyGet(expression, times(), failMessage);
@@ -320,7 +331,8 @@ namespace Moq
             mocked.GetMock().VerifySet(setterExpression, times, failMessage);
         }
 
-        public static void VerifySet<T>(this T mocked, Action<T> setterExpression, Func<Times> times, string failMessage)
+        public static void VerifySet<T>(this T mocked, Action<T> setterExpression, Func<Times> times,
+            string failMessage)
             where T : class
         {
             mocked.GetMock().VerifySet(setterExpression, times, failMessage);
@@ -392,7 +404,8 @@ namespace Moq
             mocked.GetMock().VerifyRemove(removeExpression, times, failMessage);
         }
 
-        public static void VerifyRemove<T>(this T mocked, Action<T> removeExpression, Func<Times> times, string failMessage)
+        public static void VerifyRemove<T>(this T mocked, Action<T> removeExpression, Func<Times> times,
+            string failMessage)
             where T : class
         {
             mocked.GetMock().VerifyRemove(removeExpression, times, failMessage);
@@ -414,6 +427,18 @@ namespace Moq
             where T : class
         {
             mocked.GetMock().Raise(eventExpression, args);
+        }
+
+        public static ISetupConditionResult<T> InSequence<T>(this T mocked, MockSequence sequence)
+            where T : class
+        {
+            return mocked.GetMock().InSequence(sequence);
+        }
+
+        public static void Reset<T>(this T mocked)
+            where T : class
+        {
+            MockExtensions.Reset(mocked.GetMock());
         }
     }
 }
