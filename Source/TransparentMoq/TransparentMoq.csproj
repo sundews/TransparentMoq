@@ -43,8 +43,8 @@ fileSystem.Setup(x =&gt; x.Exists(It.IsAny&lt;string&gt;())).Returns(true);</Des
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Moq" Version="4.16.0" />
-    <PackageReference Include="Sundew.Packaging.Publish" Version="3.0.1">
+    <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="Sundew.Packaging.Publish" Version="4.0.0-pre-u20210304-204222">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

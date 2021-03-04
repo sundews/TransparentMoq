@@ -415,5 +415,17 @@ namespace Moq
         {
             mocked.GetMock().Raise(eventExpression, args);
         }
+
+        public static ISetupConditionResult<T> InSequence<T>(this T mocked, MockSequence sequence)
+            where T : class
+        {
+            return mocked.GetMock().InSequence(sequence);
+        }
+
+        public static void Reset<T>(this T mocked)
+            where T : class
+        {
+            MockExtensions.Reset(mocked.GetMock());
+        }
     }
 }
