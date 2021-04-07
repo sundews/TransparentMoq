@@ -3,5 +3,6 @@
    <Deterministic>true</Deterministic>
    <Version>4.16.1</Version>
    <OutputPath>bin/$(Configuration)</OutputPath>
+   <SppVersioningMode>AutomaticLatestRevision</SppVersioningMode>
  </PropertyGroup>
 </Project>
