@@ -2,17 +2,10 @@
 
   <PropertyGroup>
     <TargetFrameworks>net45;netstandard2.0;netstandard2.1</TargetFrameworks>
-    <Authors>Kim Hugener-Ohlsen</Authors>
-    <Company>Hukano</Company>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReleaseNotes>4.16.0 - https://github.com/moq/moq4/releases/tag/v4.16.0
 4.15.2 - https://github.com/moq/moq4/releases/tag/v4.15.2
 1.0 - Initial release
     </PackageReleaseNotes>
-    <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/hugener/TransparentMoq</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/hugener/TransparentMoq</RepositoryUrl>
-    <Copyright>Kim Hugener-Ohlsen</Copyright>
     <Description>
 With inspiration taken from mocking frameworks like NSubstitute, FakeItEasy and JustMock this package adds some of the syntactic advantages of these frameworks to Moq.
 
@@ -32,8 +25,6 @@ MethodThatTakesFileSystem(fileSystem);
 
 To arrange a mock everything remains the same:
 fileSystem.Setup(x =&gt; x.Exists(It.IsAny&lt;string&gt;())).Returns(true);</Description>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageTags>moq;tdd;mocking;mocks;unittesting;agile;unittest;transparentmoq</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -44,7 +35,7 @@ fileSystem.Setup(x =&gt; x.Exists(It.IsAny&lt;string&gt;())).Returns(true);</Des
 
   <ItemGroup>
     <PackageReference Include="Moq" Version="4.16.1" />
-    <PackageReference Include="Sundew.Packaging.Publish" Version="6.1.0">
+    <PackageReference Include="Sundew.Packaging.Publish" Version="7.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

@@ -4,5 +4,25 @@
    <Version>4.16.1</Version>
    <OutputPath>bin/$(Configuration)</OutputPath>
    <SppVersioningMode>AutomaticLatestRevision</SppVersioningMode>
+   <Company>Hukano</Company>
+   <Authors>Kim Hugener-Ohlsen</Authors>
+   <Copyright>Kim Hugener-Ohlsen</Copyright>
+   <PackageTags>moq;tdd;mocking;mocks;unittesting;agile;unittest;transparentmoq</PackageTags>
+   <RepositoryUrl>https://github.com/sundews/TransparentMoq</RepositoryUrl>
+   <PackageProjectUrl>https://github.com/sundews/TransparentMoq</PackageProjectUrl>
+   <RepositoryType>git</RepositoryType>
+   <PackageLicenseExpression>MIT</PackageLicenseExpression>
+   <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+   <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+   <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+   <WarningsAsErrors />
  </PropertyGroup>
+  <PropertyGroup Condition="'$(ContinuousIntegrationBuild)' == 'true'">
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)"/>
+  </ItemGroup>
+  <Import Project="Directory.Build.props.user" Condition="Exists('Directory.Build.props.user')"/>
 </Project>
