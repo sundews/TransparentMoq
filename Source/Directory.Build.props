@@ -1,7 +1,7 @@
 <Project>
  <PropertyGroup>
    <Deterministic>true</Deterministic>
-   <Version>4.20.70</Version>
+   <Version>4.18.2</Version>
    <OutputPath>bin/$(Configuration)</OutputPath>
    <SppVersioningMode>AutomaticLatestRevision</SppVersioningMode>
    <Company>Sundews</Company>
