@@ -1,7 +1,7 @@
 <Project>
  <PropertyGroup>
    <Deterministic>true</Deterministic>
-   <Version>4.18.1</Version>
+   <Version>4.20.70</Version>
    <OutputPath>bin/$(Configuration)</OutputPath>
    <SppVersioningMode>AutomaticLatestRevision</SppVersioningMode>
    <Company>Hukano</Company>
@@ -13,6 +13,7 @@
    <RepositoryType>git</RepositoryType>
    <PackageLicenseExpression>MIT</PackageLicenseExpression>
    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+   <PackageReadmeFile>docs/README.md</PackageReadmeFile>
    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
    <WarningsAsErrors />
@@ -23,6 +24,7 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)"/>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\docs"/>
   </ItemGroup>
   <Import Project="Directory.Build.props.user" Condition="Exists('Directory.Build.props.user')"/>
 </Project>
