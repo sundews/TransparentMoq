@@ -4,7 +4,7 @@
    <Version>4.20.70</Version>
    <OutputPath>bin/$(Configuration)</OutputPath>
    <SppVersioningMode>AutomaticLatestRevision</SppVersioningMode>
-   <Company>Hukano</Company>
+   <Company>Sundews</Company>
    <Authors>Kim Hugener-Ohlsen</Authors>
    <Copyright>Kim Hugener-Ohlsen</Copyright>
    <PackageTags>moq;tdd;mocking;mocks;unittesting;agile;unittest;transparentmoq</PackageTags>
